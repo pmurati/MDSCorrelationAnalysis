@@ -21,7 +21,7 @@ outline of the program.
     
    1_intro.rst
 
-* :ref:`intro`.  
+* :ref:`intro`  
 
 ********************
 Package Dependencies
