@@ -1,6 +1,6 @@
 .. image:: images/corrMDS.png
 	:align: right
-	:scale: 30 %
+	:scale: 10 %
 
 *********************************************
 MDS for correlation structure - Documentation 
