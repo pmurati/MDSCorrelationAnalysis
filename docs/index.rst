@@ -1,12 +1,10 @@
+.. image:: images/corrMDS.png
+	:align: right
+	:scale: 50 %
 
 *********************************************
 MDS for correlation structure - Documentation 
 *********************************************
-
-.. image:: images/corrMDS.png
-	:align: right
-	:scale: 70 %
-
 
 Multidimensional Scaling (MDS) for the 3d visualization of the dynamical
 propagation of correlations in stock's closing prices.
