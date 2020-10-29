@@ -9,7 +9,7 @@ In the following, I will discuss the motivation and the problem of transforming 
 - [Introduction](#introduction)
 - [Package Dependencies](#package-dependencies)
 - [User Guide](#user-guide)
-- [APi Reference](#api-reference)
+- [API Reference](#api-reference)
 
 ## Introduction
 
