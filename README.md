@@ -13,6 +13,10 @@ In the following, I will discuss the motivation and the problem of transforming 
 
 ## Introduction
 
+### Correlation matrices
+
+Although quite easy to compute, the inference of information from correlation matrices can get messy, once we want to get a birds eye view on the correlation structure as a whole and are not only interested in pairwise dependencies. While it might be possible to get an overall feeling for the correlations of a few time series, it gets impossible for larger collections, as the number of pairwise correlations for $`n`$ time series grows as $`\Omicron(n^2)`$       
+
 ## Package Dependencies
 
 ## User Guide
