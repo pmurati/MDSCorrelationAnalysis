@@ -28,7 +28,7 @@ At first, it seems quite intuitive to make the assumption that time series with 
 
 Consider a 2d sphere embedded in 3d space as in the figure below.   
 
-![CorrDist_Manifold](images/corrdist_manifold.jpeg "")
+![CorrDist_Manifold](images/corrdist_manifold.jpg "")
  
 
 ## Package Dependencies
