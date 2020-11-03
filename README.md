@@ -40,11 +40,14 @@ The above choice, although sensible will not guarantee a perfect mapping onto a 
 
 ### Gradient descent
 
-Consider a random configuration of $`n`$ cartesian coordinates $`\bold{x}_{1},\dots,\bold{x}_{n}\in\R`$ arranged in the matrix 
-
+In the following, we will define the cost function $`J`$ which is going to be minimized, given:
+- an initial correlation matrix $`d_{\rho}(i,j)`$ of $`n`$ time series
+- a random configurations of cartesian coordiantes $`\bold{x}_{1},\dots,\bold{x}_{n}\in\R`$, arranged in the matrix
 ```math
-\bold{X} = [\bold{x}_{1}\dots\bold{x}_{n}]^{T}
+\bold{X} = [\bold{x}_{1},\dots,\bold{x}_{n}]^{T}
 ```
+- a number of epochs $`k\in1,\dots,K`$
+
 
 ## Package Dependencies
 
