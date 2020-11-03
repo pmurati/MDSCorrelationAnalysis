@@ -30,7 +30,7 @@ Consider a 2d sphere embedded in 3d space as in the figure below with vectors $`
 
 ![CorrDist_Manifold](images/corrdist_manifold.jpg "")
  
-In this representation, $`\bold{x}_{i}`$ sits at the pole of the sphere and points with high positive correlation will lie in its vicinity on the upper hemisphere. Here, spheric sections correspond to circles of constant correlation, with the great circle corresponding points of zero correlation, i.e. $`\bold{x}_{j}`$. Now, the antipodal point of $`\bold{x}_{i}`$ given by $`\bold{x}_{k}`$ represents a perfect negative correlation and points within its vicinity on the lower represent oerall negative correlation. A distance metric $`d_{\rho}(i,j): \rho_{ij}` \to \R^3 $ that enables this representation is given by
+In this representation, $`\bold{x}_{i}`$ sits at the pole of the sphere and points with high positive correlation will lie in its vicinity on the upper hemisphere. Here, spheric sections correspond to circles of constant correlation, with the great circle corresponding points of zero correlation, i.e. $`\bold{x}_{j}`$. Now, the antipodal point of $`\bold{x}_{i}`$ given by $`\bold{x}_{k}`$ represents a perfect negative correlation and points within its vicinity on the lower represent overall negative correlation. A distance metric $`d_{\rho}(i,j): \rho_{ij} \to\R^3`$ that enables this representation is given by
 
 ```math
 d_{\rho}(i,j) = \sqrt{2(1-\rho_{ij})}
