@@ -40,10 +40,10 @@ The above choice, although sensible will not guarantee a perfect mapping onto a 
 
 ### Gradient descent
 
-Consider a random configuration of $`n`$ cartesian coordinates $`\bold_{x}_{1}\dots\bold_{x}_{n}\in\R`$ arranged in the matrix 
+Consider a random configuration of $`n`$ cartesian coordinates $`\bold{x}_{1}\dots\bold{x}_{n}\in\R`$ arranged in the matrix 
 
 ```math
-\bold_{X} = [\bold_{x}_{1}\dots\bold_{x}_{n}]^{T}
+\bold_{X} = [\bold{x}_{1}\dots\bold{x}_{n}]^{T}
 ```
 
 ## Package Dependencies
