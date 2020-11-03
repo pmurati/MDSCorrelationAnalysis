@@ -48,6 +48,7 @@ In the following, we will define the cost function $`J`$ which is going to be mi
 ```
 - a number of epochs $`k\in1,\dots,K`$
 
+Let the euclidean distance between two vectors $`\bold{x}_{i}`$ and $`\bold{x}_{j}`$ be given by $`d(i,j)`$
 
 ## Package Dependencies
 
