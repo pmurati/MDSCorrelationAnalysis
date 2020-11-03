@@ -40,6 +40,12 @@ The above choice, although sensible will not guarantee a perfect mapping onto a 
 
 ### Gradient descent
 
+Consider a random configuration of $`n`$ cartesian coordinates $`\bold_{x}_{1},...,\bold_{x}_{n}\in\R^3`$ arranged in the matrix 
+
+```math
+\bold_{X} = [\bold_{x}_{1},...,\bold_{x}_{n}]^{T}
+```
+
 ## Package Dependencies
 
 ## User Guide
