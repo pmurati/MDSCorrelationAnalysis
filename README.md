@@ -74,7 +74,7 @@ By the chain rule, each term in the sum can be written as
 
 Expanding \varepsilon_{ij} in terms of the distances and noting that $`d_{\rho}(i,j)`$ is fixed, we get
 ```math
-nabla_{i}\varepsilon_{ij} = \nabla_{i} d_{\bold{x}}(i,j) = \frac{\bold{x}_{i}-\bold{x}_{j}}{d_{\bold{x}}(i,j)}
+\nabla_{i}\varepsilon_{ij} = \nabla_{i} d_{\bold{x}}(i,j) = \frac{\bold{x}_{i}-\bold{x}_{j}}{d_{\bold{x}}(i,j)}
 ```
 
 
