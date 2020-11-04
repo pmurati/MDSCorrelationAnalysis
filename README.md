@@ -40,7 +40,7 @@ The above choice, although sensible will not guarantee a perfect mapping onto a 
 
 ### Gradient descent
 
-In the following, we will define the cost function $`J`$ which is going to be minimized, given:
+In the following, we will define the loss function $`J`$ which is going to be minimized, given:
 - an initial correlation matrix $`d_{\rho}(i,j)`$ of $`n`$ time series
 - a random configurations of cartesian coordiantes $`\bold{x}_{1},\dots,\bold{x}_{n}\in\R`$, arranged in the matrix
 ```math
@@ -48,7 +48,13 @@ In the following, we will define the cost function $`J`$ which is going to be mi
 ```
 - a number of epochs $`k\in1,\dots,K`$
 
-Let the euclidean distance between two vectors $`\bold{x}_{i}`$ and $`\bold{x}_{j}`$ be given by $`d_{\bold{x}}(i,j)`$
+Let the euclidean distance between two vectors $`\bold{x}_{i}`$ and $`\bold{x}_{j}`$ be given by $`d_{\bold{x}}(i,j)`$, where the bold index $`\bold{x}`$ distinguishes this distance form the distance metric above. We want to minimize the difference in distance between our derived distance metric and the euclidean distance of cofiguration vectors $`\varepsilon_{ij} = d_{\bold{x}}(i,j) -  d_{\rho}(i,j)`$. This allows for the definition of a convex loss function visualization
+
+```math
+J = \sum_{\substack{i,j}} \varepsilon_{ij}^2
+```
+
+
 
 ## Package Dependencies
 
