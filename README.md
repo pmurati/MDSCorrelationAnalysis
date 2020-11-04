@@ -79,6 +79,13 @@ Expanding $`\varepsilon_{ij}`$ in terms of the distances and noting that $`d_{\r
 \nabla_{i}\varepsilon_{ij} = \nabla_{i} d_{\bold{x}}(i,j) = \frac{\bold{x}_{i}-\bold{x}_{j}}{d_{\bold{x}}(i,j)}
 ```
 
+leading to an overall expression for the loss gradient
+
+```math
+\nabla_{i}J = 2\sum_{i,j}\frac{\varepsilon_{ij}}{d_{\bold{x}}(i,j)}\cdot(\bold{x}_{i}-\bold{x}_{j})
+```
+
+For compactness let us define $`\nabla\bold{J} = \begin{bmatrix}  (\nabla_{1}J)^{T} \\ \dots \\(\nabla_{n}J)^{T} \end{bmatrix}`$
 
 
 ## Package Dependencies
