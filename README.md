@@ -51,7 +51,7 @@ In the following, we will define the loss function $`J`$ which is going to be mi
 Let the euclidean distance between two vectors $`\bold{x}_{i}`$ and $`\bold{x}_{j}`$ be given by $`d_{\bold{x}}(i,j)`$, where the bold index $`\bold{x}`$ distinguishes this distance form the distance metric above. We want to minimize the difference in distance between our derived distance metric and the euclidean distance of cofiguration vectors $`\varepsilon_{ij} = d_{\bold{x}}(i,j) -  d_{\rho}(i,j)`$. This allows for the definition of a convex loss function visualization
 
 ```math
-J = \sum_{\varepsilon_{ij}^2} 
+J = \sum_{i,j} \varepsilon_{ij}^2
 ```
 
 
