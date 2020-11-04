@@ -54,14 +54,28 @@ Let the euclidean distance between two vectors $`\bold{x}_{i}`$ and $`\bold{x}_{
 d_{\bold{x}}(i,j) = \sqrt{(x_{i}-x_{j})^2 + (y_{i}-y_{j})^2 + (z_{i}-z_{j})^2}
 ```
 
-with $`\bold{x}_{i} = [x_{i},y_{i},z_{i}]^{T}`$ and where the bold index $`\bold{x}`$ distinguishes this distance form the distance metric above. We want to minimize the difference in distance between our derived distance metric and the euclidean distance of cofiguration vectors $`\varepsilon_{ij} = d_{\bold{x}}(i,j) -  d_{\rho}(i,j)`$. This allows for the definition of a convex loss function visualization
+with $`\bold{x}_{i} = [x_{i},y_{i},z_{i}]^{T}`$ and where the bold index $`\bold{x}`$ distinguishes this distance form the distance metric above. We want to minimize the difference in distance between our derived distance metric and the euclidean distance of cofiguration vectors $`\varepsilon_{ij} = d_{\bold{x}}(i,j) -  d_{\rho}(i,j)`$. This allows for the definition of a convex loss function
 
 ```math
 J = \sum_{i,j} \varepsilon_{ij}^2 = \sum_{i,j} (d_{\bold{x}}(i,j) -  d_{\rho}(i,j))^2
 ```
 
-The gradient of this loss with respect to each vector 
+The gradient of this loss with respect to each vector $`\bold{x}_{i}`$ is given by
 
+```math
+\nabla_{i}J = \sum_{i,j} \nabla_{i} (\varepsilon_{ij})^2 
+```
+
+By the chain rule, each term in the sum can be written as
+
+```math
+\nabla_{i} (\varepsilon_{ij})^2 = 2 \varepsilon_{ij}\cdot\nabla_{i}\varepsilon_{ij}
+```
+
+Expanding \varepsilon_{ij} in terms of the distances and noting that $`d_{\rho}(i,j)`$ is fixed, we get
+```math
+nabla_{i}\varepsilon_{ij} = \nabla_{i} d_{\bold{x}}(i,j) = \frac{\bold{x}_{i}-\bold{x}_{j}}{d_{\bold{x}}(i,j)}
+```
 
 
 ## Package Dependencies
