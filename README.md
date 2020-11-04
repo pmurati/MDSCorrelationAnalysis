@@ -94,6 +94,8 @@ Updating the coordinate matrix $`\bold{X}`$ after one epoch $`k\to k+1`$ of grad
 \bold{X}^{k+1} = \bold{X}^{k} - \lambda\cdot\nabla\bold{J}^{k}
 ``` 
 
+where we added the upper index for the respective epoch. Thus, adter each step the coordinates get updated and in return the distances $`d_{\bold{x}}(i,j)`$.  
+
 ## Package Dependencies
 
 ## User Guide
