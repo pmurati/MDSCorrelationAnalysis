@@ -1,4 +1,4 @@
-# Multidimensional Scaling for the 3d visualization of the dynamical propagation of correlations in stock's closing prices
+# Multidimensional Scaling for the 3d visualization of the dynamic propagation of correlations in stock's closing prices
 
 The approach taken will make use of two python scripts `corrMDS.py` and `stock_data_collection_tools.py`. The first program contains the class and its methods for transforming a dataframe of time series objects into a 3d trajectory. The second one is a collection of functions necessary for retrieving and processing closing prices for the german DAX index and has been adopted almost one to one from Kinsleys's Youtube Playlist on [Python Programming for Finance](https://www.youtube.com/playlist?list=PLQVvvaa0QuDcOdF96TBtRtuQksErCEBYZ).
 
@@ -94,7 +94,13 @@ Updating the coordinate matrix $`\bold{X}`$ after one epoch $`k\to k+1`$ of grad
 \bold{X}^{k+1} = \bold{X}^{k} - \lambda\cdot\nabla\bold{J}^{k}
 ``` 
 
-where we added the upper index for the respective epoch. Thus, adter each step the coordinates get updated and in return the distances $`d_{\bold{x}}(i,j)`$.  
+where we added the upper index for the respective epoch. Thus after each step, the coordinates get updated and in return the distances $`d_{\bold{x}}(i,j)`$.  
+
+### Dynamic propagation
+
+We are interested in correlation changes over time. This can be achieved by computing the correlation matrix within a moving window, by setting a certain window and step size. By default we will consider step sizes of one week. The choice of the window size is a delicate one, as it will have a direct impact on how smooth correlation will vary over time. In the current setting, windows of 6 months are considered. 
+
+Let the time dependence be given by the upper index $`t\in 1,dots,T`$ and keep in mind that it has a different meaning than the epoch index $`k\in 1,\dots,K`$. One whole gradient descent is performed at each time $`t`$. The procedure in the precious section has the donwside that the initial configuration of coordinate points is initialized randomly and that the final vectors, given only the distances from the correlation matrix as an input, are unique only up to rotation. To mitigate this problem, assume the following procedure.    
 
 ## Package Dependencies
 
