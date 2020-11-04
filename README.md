@@ -72,7 +72,7 @@ By the chain rule, each term in the sum can be written as
 \nabla_{i} (\varepsilon_{ij})^2 = 2 \varepsilon_{ij}\cdot\nabla_{i}\varepsilon_{ij}
 ```
 
-Expanding \varepsilon_{ij} in terms of the distances and noting that $`d_{\rho}(i,j)`$ is fixed, we get
+Expanding $`\varepsilon_{ij}`$ in terms of the distances and noting that $`d_{\rho}(i,j)`$ is fixed, we get
 ```math
 \nabla_{i}\varepsilon_{ij} = \nabla_{i} d_{\bold{x}}(i,j) = \frac{\bold{x}_{i}-\bold{x}_{j}}{d_{\bold{x}}(i,j)}
 ```
