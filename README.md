@@ -102,7 +102,19 @@ We are interested in correlation changes over time. This can be achieved by comp
 
 Let the time dependence be given by the index $`t\in 1,\dots,T`$ which should not be confused with the epoch index $`k\in 1,\dots,K`$. Keep in mind that one whole gradient descent is performed at each time $`t`$. The procedure in the precious section has the donwside that the initial configuration of coordinate points is initialized randomly and that the final vectors, given only the distances from the correlation matrix as an input, are unique only up to rotation. To mitigate this problem, lets assume the following procedure.   
 
+At time $`t`$ given the corrdinate matrix $`\bold{X}_{t}^{1}`$ in the first epoch, perform the gradient descent until epoch $`K`$ (or until a reasonable stopping criterion is triggered) 
 
+```math
+\bold{X}_{t}^{1} \xrightarrow[descent]{gradient} \bold{X}_{t}^{K} 
+```
+
+Then, in going from $`t`$ to $`t+1`$, set 
+
+```math
+\bold{X}_{t+1}^{1} = \bold{X}_{t}^{K} 
+```
+
+thus allowing the previous coordinates to be the input for the following optimization. Again, the quality of the resulting trajectories will depend on the choice in window size. A wide window will lead to less variability in the change of correlation and smoother trajectories than a short one.   
 
 ## Package Dependencies
 
