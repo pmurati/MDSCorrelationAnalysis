@@ -85,8 +85,14 @@ leading to an overall expression for the loss gradient
 \nabla_{i}J = 2\sum_{i,j}\frac{\varepsilon_{ij}}{d_{\bold{x}}(i,j)}\cdot(\bold{x}_{i}-\bold{x}_{j})
 ```
 
-For compactness let us define $`\nabla\bold{J} = \begin{bmatrix}  (\nabla_{1}J)^{T} \\ \dots \\(\nabla_{n}J)^{T} \end{bmatrix}`$
+For compactness let us define
+```math
+ \nabla\bold{J} = \begin{bmatrix}  (\nabla_{1}J)^{T} \\ \vdots \\(\nabla_{n}J)^{T} \end{bmatrix}
+ ```
+Updating the coordinate matrix $`\bold{X}`$ after one epoch $`k\to k+1`$ of gradient descent is thus given by
+```math
 
+``` 
 
 ## Package Dependencies
 
