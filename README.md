@@ -48,6 +48,8 @@ In the following, we will define the loss function $`J`$ which is going to be mi
 ```
 - a number of epochs $`k\in1,\dots,K`$
 
+- the learning rate $`\lambda`$
+
 Let the euclidean distance between two vectors $`\bold{x}_{i}`$ and $`\bold{x}_{j}`$ be given by
 
 ```math
@@ -76,6 +78,7 @@ Expanding $`\varepsilon_{ij}`$ in terms of the distances and noting that $`d_{\r
 ```math
 \nabla_{i}\varepsilon_{ij} = \nabla_{i} d_{\bold{x}}(i,j) = \frac{\bold{x}_{i}-\bold{x}_{j}}{d_{\bold{x}}(i,j)}
 ```
+
 
 
 ## Package Dependencies
