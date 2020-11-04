@@ -91,7 +91,7 @@ For compactness let us define
  ```
 Updating the coordinate matrix $`\bold{X}`$ after one epoch $`k\to k+1`$ of gradient descent is thus given by
 ```math
-
+\bold{X}^{k+1} = \bold{X}^{k} - \lambda\dot\nabla\bold{J}^{k}
 ``` 
 
 ## Package Dependencies
