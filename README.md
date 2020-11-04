@@ -100,7 +100,7 @@ where we added the upper index for the respective epoch. Thus after each step, t
 
 We are interested in correlation changes over time. This can be achieved by computing the correlation matrix within a moving window, by setting a certain window and step size. By default we will consider step sizes of one week. The choice of the window size is a delicate one, as it will have a direct impact on how smooth correlation will vary over time. In the current setting, windows of 6 months are considered. 
 
-Let the time dependence be given by the upper index $`t\in 1,\dots,T`$ and keep in mind that it has a different meaning than the epoch index $`k\in 1,\dots,K`$. One whole gradient descent is performed at each time $`t`$. The procedure in the precious section has the donwside that the initial configuration of coordinate points is initialized randomly and that the final vectors, given only the distances from the correlation matrix as an input, are unique only up to rotation. To mitigate this problem, assume the following procedure.    
+Let the time dependence be given by the upper index $`t\in 1,\dots,T`$ which should not be confused with the epoch index $`k\in 1,\dots,K`$. Keep in mind that one whole gradient descent is performed at each time $`t`$. The procedure in the precious section has the donwside that the initial configuration of coordinate points is initialized randomly and that the final vectors, given only the distances from the correlation matrix as an input, are unique only up to rotation. To mitigate this problem, assume the following procedure.    
 
 ## Package Dependencies
 
