@@ -120,8 +120,16 @@ thus allowing the previous coordinates to be the input for the following optimiz
 
 The correlation analyzis described in the previous section is implemented using the following libraries.
 
-- [beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-    webscraper
+- [beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) used for webscraping
+- [datetime](https://docs.python.org/3/library/datetime.html) basic date and time types
+- [matplotlib](https://matplotlib.org/) create static and interactive visualizations
+- [mpl_toolkits](https://matplotlib.org/mpl_toolkits/index.html) extentions for matplotlib, needed for updating interactive trajectory plot 
+- [numpy](https://numpy.org/doc/stable/) the go-to library for mathematical calculations, used for computing the gradient 
+- [pandas](https://pandas.pydata.org/pandas-docs/stable/) the go-to library for data anylsis, used for the import of data tables and their manipulation
+- [pickle]()
+- [requests]() sending http requests
+- [tqdm]() visualize progress bar
+- [os]() 
 
 ## User Guide
 
