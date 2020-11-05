@@ -118,6 +118,11 @@ thus allowing the previous coordinates to be the input for the following optimiz
 
 ## Package Dependencies
 
+The correlation analyzis described in the previous section is implemented using the following libraries.
+
+- [beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+    webscraper
+
 ## User Guide
 
 ## API Reference
