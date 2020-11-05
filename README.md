@@ -126,7 +126,7 @@ The correlation analyzis described in the previous section as well as the proces
 - [mpl_toolkits](https://matplotlib.org/mpl_toolkits/index.html) extentions for matplotlib, needed for updating interactive trajectory plot 
 - [numpy](https://numpy.org/doc/stable/) the go-to library for mathematical calculations, used for computing the gradient 
 - [pandas](https://pandas.pydata.org/pandas-docs/stable/) the go-to library for data analysis, used for the import of data tables and their manipulation
-- [pandas_datareader](https://pandas-datareader.readthedocs.io/en/latest/) remote data access for OHLC stock prices from [Yahoo!Finance](finance.yahoo.com)
+- [pandas_datareader](https://pandas-datareader.readthedocs.io/en/latest/) remote data access for OHLC stock prices from [Yahoo!Finance](https://finance.yahoo.com)
 - [pickle](https://docs.python.org/3/library/pickle.html) object serialisation, used for ticker symbols
 - [requests](https://requests.readthedocs.io/en/master/) sending http requests 
 - [tqdm](https://tqdm.github.io/) visualize progress bar
