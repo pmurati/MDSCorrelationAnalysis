@@ -134,4 +134,6 @@ The correlation analyzis described in the previous section as well as the proces
 
 ## User Guide
 
+The usage of `stock_data_collection_tools.py` and `corrMDS.py` are displayed by considering the case of retrieving the adjusted closing prices for the german DAX index of the past 10 years and visualize them using MDS on the correlation metric for different times, obtaining interactive 3d configuration plots. This section follows the implementation, as showcased in the [testscript](Testscript.ipynb).  
+
 ## API Reference
