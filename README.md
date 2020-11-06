@@ -167,4 +167,11 @@ The functions in `stock_data_collection_tools` can be easily adjusted to retriev
 
 The following function allows for the visualization of the correlation matrix, as showcased in the [introduction](#correlation-matrices). 
 
+```python
+sdct.visualize_data()
+```
+
+
+
+
 ## API Reference
