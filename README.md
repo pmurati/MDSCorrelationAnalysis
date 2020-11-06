@@ -156,7 +156,7 @@ sdct.save_dax_tickers()
 sdct.get_dax_from_yahoo()
 ```
 
-The data aggregation is finished by creating a joint table of the adjusted closing prices for each stock.
+The data aggregation is finished by creating a joint table of the adjusted closing prices for each stock and saving it in your root directory as *dax_joined_closes.csv*.
 
 ```python
 sdct.compile_dax()
@@ -174,6 +174,13 @@ sdct.visualize_data()
 ```
 
 ### Correlation based trajectories: the corrMDS class
+
+Import the joint dataframe of closing prices and create an instance of the corrMDS class, taking the dataframe as input.
+
+```python
+df = pd.read_csv('dax_joined_closes.csv')
+stock_obj = corrMDS(df)
+```
 
 
 
