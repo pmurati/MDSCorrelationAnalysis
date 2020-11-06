@@ -182,6 +182,12 @@ df = pd.read_csv('dax_joined_closes.csv')
 stock_obj = corrMDS(df)
 ```
 
+The main method of this class is [MDS_trajectory](#), which is the wrapper function for the [gradient descent](#gradient-descent) algorithm. Based on a moving time interval, the distance metric $`d_{\rho}(i,j) = \sqrt{2(1-\rho_{ij})}`$ (see, [here](#distance-metric)) and the respective correlation matrix, it computes the coordiantes in the configuration space and saves the mean and standard deviation of the stock prices for each time step.
+
+```python
+stock_obj.MDS_trajectory()
+```
+
 
 
 ## API Reference
