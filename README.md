@@ -136,4 +136,35 @@ The correlation analyzis described in the previous section as well as the proces
 
 The usage of `stock_data_collection_tools.py` and `corrMDS.py` are displayed by considering the case of retrieving the adjusted closing prices for the german DAX index of the past 10 years. They are visualized using MDS on the correlation metric for different times, thereby obtaining interactive 3d configuration plots. This section follows the implementation, as showcased in the [testscript](Testscript.ipynb).  
 
+First, import the necessary scripts and packages.
+
+```python
+from corrMDS import corrMDS
+import matplotlib.pyplot as plt
+import pandas as pd
+import stock_data_collection_tools as stct
+
+plt.style.use('seaborn-darkgrid') #set the plot style
+```
+
+We start by retrieving the relevant ticker symbols for the DAX index, which are then saved as a pickle file. Subsequently, this file is used to get the OHLC prices from yhaoo finance and save a csv file for each stock in the generated sub folder `dax_stock_dfs`.
+
+```python
+sdct.save_dax_tickers()
+sdct.get_dax_from_yahoo()
+```
+
+The data aggregation is finished by creating a joint table of the adjusted closing prices for each stock.
+
+```python
+sdct.compile_dax()
+```
+
+>>>
+**NOTE**
+The functions in `stock_data_collection_tools` can be easily adjusted to retrieve other indices. For a more detailed explanation, see Kinsleys's Youtube Playlist on [Python Programming for Finance](https://www.youtube.com/playlist?list=PLQVvvaa0QuDcOdF96TBtRtuQksErCEBYZ).
+>>>
+
+The following function allows for the visualization of the correlation matrix, as showcased in the [introduction](#correlation-matrices). 
+
 ## API Reference
