@@ -136,6 +136,8 @@ The correlation analyzis described in the previous section as well as the proces
 
 The usage of `stock_data_collection_tools.py` and `corrMDS.py` are displayed by considering the case of retrieving the adjusted closing prices for the german DAX index of the past 10 years. They are visualized using MDS on the correlation metric for different times, thereby obtaining interactive 3d configuration plots. This section follows the implementation, as showcased in the [testscript](Testscript.ipynb).  
 
+### Get the data: stock_data_collection_tools 
+
 First, import the necessary scripts and packages.
 
 ```python
@@ -171,6 +173,7 @@ The following function allows for the visualization of the correlation matrix, a
 sdct.visualize_data()
 ```
 
+### Correlation based trajectories: the corrMDS class
 
 
 
