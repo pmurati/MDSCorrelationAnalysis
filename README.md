@@ -200,7 +200,7 @@ stock_obj.plot_3d_state()
 
 ![Animation of 3d trajectory](images/animation.gif)
 
-As we can see, the configuration seems to lie approximately on an ellipsoidal surface. The size of the eppilsoid, or equivalently the mean distance from the centroid, shrink at certain points in time, indicating a tendency towards overall positive correlation as a result of stock market chrashs. Of course, this representation of the data depends on numerous assumptions, one of which is the moving window size. Thus, by adjusting the window size (by default it is set to 6 months) to larger values, we would expect a smoother variation of the mean distance and smoother trajectories of the 3d configuration.
+As we can see, the configuration seems to lie approximately on an ellipsoidal surface for most of the time. The size of the eppilsoid, or equivalently the mean distance from the centroid, shrink at certain points in time, indicating a tendency towards overall positive correlation as a result of stock market chrashs. Of course, this representation of the data depends on numerous assumptions, one of which is the moving window size. Thus, by adjusting the window size (by default it is set to 6 months) to larger values, we would expect a smoother variation of the mean distance and smoother trajectories of the 3d configuration.
 
 
 ## API Reference
