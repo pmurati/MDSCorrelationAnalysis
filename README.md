@@ -192,7 +192,7 @@ stock_obj.MDS_trajectory()
 
 Finally, we can visualize the results. The following method returns an interactive slider plot consisting of
 - the mean distance of the configuration from its centroid, see [mean_distance](#)
-- the 3d time dependent configuration scatter plot, where each point is scaled by the standard deviation and colored with respect to the mean value of the underlying time series for each time step
+- the 3d time dependent configuration scatter plot, where each point is scaled by the standard deviation and colored with respect to the mean value of the underlying stock price for each time step
 
 ```python
 stock_obj.plot_3d_state()
@@ -200,6 +200,7 @@ stock_obj.plot_3d_state()
 
 ![Animation of 3d trajectory](images/animation.gif)
 
+As we can see, the configuration seems to lie approximately on an ellipsoidal surface. The size of the eppilsoid, or equivalently the mean distance from the centroid, shrink at certain points in time, indicating a tendency towards overall positive correlation as a result of stock market chrashs. Of course, this representation of the data depends on numerous assumptions, one of which is the moving window size. Thus, by adjusting the window size (by default it is set to 6 months) to larger values, we would expect a smoother variation of the mean distance and smoother trajectories of the 3d configuration.
 
 
 ## API Reference
