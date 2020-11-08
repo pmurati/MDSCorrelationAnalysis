@@ -190,6 +190,8 @@ The main method of this class is [MDS_trajectory](#), which is the wrapper funct
 stock_obj.MDS_trajectory()
 ```
 
-
+Finally, we can visualize the results. The following method returns an interactive slider plot consisting of
+- the 3d time dependent configuration scatter plot, where each point is scaled by the standard deviation and colored with respect to the mean value of the underlying time series for each time step
+- the mean distance of the configuration from its centroid
 
 ## API Reference
