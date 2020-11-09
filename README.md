@@ -204,3 +204,16 @@ As we can see, the configuration seems to lie approximately on an ellipsoidal su
 
 
 ## API Reference
+
+This section will give an overview of the two scripts `stock_data_collection_tools.py` and `corrMDS.py`, their functions, classes and methods.
+
+### stock_data_collection_tools
+
+Includes the functions for retrieving and aggregating closing prices for the german DAX index and visualize their corss-correlations based on open source data.
+
+#### save_dax_tickers():
+
+Collect ticker symbols listed in the german DAX from the wikipedia page.
+
+**Returns** .pkl object
+A list with the respective ticker symbols
