@@ -220,21 +220,21 @@ The following functions can easily be adjusted to receive an input for any index
 
 Collect ticker symbols listed in the german DAX from the wikipedia page.
 
-**Returns:**     a list with the respective ticker symbols
+**Returns:**     a list with the respective ticker symbols  
 **Return type:** .pickle object
 
 #### get_dax_from_yahoo()
 
 Create a directory and save historical OHLC stock data for each ticker symbol from the *daxtickers.pickle* object for the last 10 years. A new directory *dax_stock_dfs* is created.
 
-**Returns:**     the OHLC prices for each ticker
+**Returns:**     the OHLC prices for each ticker  
 **Return type:** .csv files
 
 #### compile_dax()
 
 For each ticker symbol in *daxtickers.pickle*, open the respective csv file with the OHLC prices and combine their adjusted closing prices into one single dataframe. 
 
-**Returns:**     the joined closing prices
+**Returns:**     the joined closing prices  
 **Return type:** dataframe
 
 #### visualize_data(data='dax_joined_closes.csv')
