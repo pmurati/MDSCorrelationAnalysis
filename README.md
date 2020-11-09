@@ -216,4 +216,5 @@ Includes the functions for retrieving and aggregating closing prices for the ger
 Collect ticker symbols listed in the german DAX from the wikipedia page.
 
 **Returns:** *.pkl object*
+
     A list with the respective ticker symbols
