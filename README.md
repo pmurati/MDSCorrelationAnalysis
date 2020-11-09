@@ -211,10 +211,34 @@ This section will give an overview of the two scripts `stock_data_collection_too
 
 Includes the functions for retrieving and aggregating closing prices for the german DAX index and visualize their corss-correlations based on open source data.
 
+>>>
+**NOTE**
+The following functions can easily be adjusted to receive an input for any index oder list of stocks.
+>>>
+
 #### save_dax_tickers():
 
 Collect ticker symbols listed in the german DAX from the wikipedia page.
 
-**Returns:** *.pkl object*
+**Returns:**     a list with the respective ticker symbols
+**Return type:** .pickle object
 
-    A list with the respective ticker symbols
+#### get_dax_from_yahoo()
+
+Create a directory and save historical OHLC stock data for each ticker symbol from the *daxtickers.pickle* object for the last 10 years. A new directory *dax_stock_dfs* is created.
+
+**Returns:**     the OHLC prices for each ticker
+**Return type:** .csv files
+
+#### compile_dax()
+
+For each ticker symbol in *daxtickers.pickle*, open the respective csv file with the OHLC prices and combine their adjusted closing prices into one single dataframe. 
+
+**Returns:**     the joined closing prices
+**Return type:** dataframe
+
+#### visualize_data(data='dax_joined_closes.csv')
+
+Visualization of cross correlation matrix for the adjusted closing prices of the german DAX index as a heatmap plot. The color scale RdYlGn has been used to indicate positive (green), negative (red) and no correlation (yellow).
+
+**Parameters:** **data** *(str,optional)* - the joined closing prices
