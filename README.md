@@ -207,7 +207,7 @@ As we can see, the configuration seems to lie approximately on an ellipsoidal su
 
 This section will give an overview of the two scripts `stock_data_collection_tools.py` and `corrMDS.py`, their functions, classes and methods.
 
-### stock_data_collection_tools
+### stock_data_collection_tools.py
 
 Includes the functions for retrieving and aggregating closing prices for the german DAX index and visualize their corss-correlations based on open source data.
 
@@ -242,3 +242,7 @@ For each ticker symbol in *daxtickers.pickle*, open the respective csv file with
 Visualization of cross correlation matrix for the adjusted closing prices of the german DAX index as a heatmap plot. The color scale RdYlGn has been used to indicate positive (green), negative (red) and no correlation (yellow).
 
 **Parameters:** **data** *(str,optional)* - the joined closing prices
+
+### corrMDS.py
+
+The class corrMDS contains the necessary methods to visualize the propagation of pairwise correlations between stock prices in an abstract 3d space. However, the class can be used for any dataframe that consists of time series data.
