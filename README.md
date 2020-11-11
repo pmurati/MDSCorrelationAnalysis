@@ -212,8 +212,8 @@ As we can see, the configuration seems to lie approximately on an ellipsoidal su
 - [visualize_data](#visualize_datadatadax_joined_closescsv)
 
 `corrMDS.py`
-- [cartesianMDS](#cartesianMDS)
-- [MDS_trajectory](#mds_trajectorysize_windows6-seed42-metriclinear-Nmax2500-lam001)
+- [cartesianMDS](#cartesianmds)
+- [MDS_trajectory](#mds_trajectorysize_windows6-seed42-metriclinear-nmax2500-lam001)
 - [mean_distance](#mean_distance)
 - [plot_3d_state](#plot_3d_state)
 
