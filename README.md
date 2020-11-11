@@ -210,8 +210,9 @@ As we can see, the configuration seems to lie approximately on an ellipsoidal su
 - [compile_dax](#compile_dax)
 - [visualize_data](#visualize_datadatadax_joined_closescsv)
 
+
 - [cartesianMDS](#cartesianMDS)
-- [MDS_trajectory](#MDS_trajectorysize_windows6,-seed42,-metriclinear,-Nmax=2500,-lam=001)
+- [MDS_trajectory](#MDS_trajectorysize_windows6,-seed42,-metriclinear,-Nmax2500,-lam001)
 - [mean_distance](#mean_distance)
 - [plot_3d_state](#plot_3d_state)
 
