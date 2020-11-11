@@ -205,7 +205,7 @@ As we can see, the configuration seems to lie approximately on an ellipsoidal su
 
 ## API Reference
 
-- [save_dax_tickers](#save_dax_tickers())
+- [save_dax_tickers](#save-dax-tickers())
 - [get_dax_from_yahoo](#get_dax_from_yahoo())
 
 
