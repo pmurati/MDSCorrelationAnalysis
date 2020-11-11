@@ -184,14 +184,14 @@ df = pd.read_csv('dax_joined_closes.csv')
 stock_obj = corrMDS(df)
 ```
 
-The main method of this class is [MDS_trajectory](#), which is the wrapper function for the [gradient descent](#gradient-descent) algorithm. Based on a moving time interval, the distance metric $`d_{\rho}(i,j) = \sqrt{2(1-\rho_{ij})}`$ (see, [here](#distance-metric)) and the respective correlation matrix, it computes the coordiantes in the configuration space and saves the mean and standard deviation of the stock prices for each time step.
+The main method of this class is [MDS_trajectory](#mds_trajectorysize_windows6-seed42-metriclinear-nmax2500-lam001), which is the wrapper function for the [gradient descent](#gradient-descent) algorithm. Based on a moving time interval, the distance metric $`d_{\rho}(i,j) = \sqrt{2(1-\rho_{ij})}`$ (see, [here](#distance-metric)) and the respective correlation matrix, it computes the coordiantes in the configuration space and saves the mean and standard deviation of the stock prices for each time step.
 
 ```python
 stock_obj.MDS_trajectory()
 ```
 
 Finally, we can visualize the results. The following method returns an interactive slider plot consisting of
-- the mean distance of the configuration from its centroid, see [mean_distance](#)
+- the mean distance of the configuration from its centroid, see [mean_distance](#mean_distance)
 - the 3d time dependent configuration scatter plot, where each point is scaled by the standard deviation and colored with respect to the mean value of the underlying stock price for each time step
 
 ```python
@@ -257,9 +257,16 @@ Visualization of cross correlation matrix for the adjusted closing prices of the
 
 ### class corrMDS(df)
 
-**Parameters:** **df** *(str)* - input the relevant time series data, timestamps as column needed 
-
 The class corrMDS in `corrMDS.py` contains the necessary methods to visualize the propagation of pairwise correlations between stock prices in an abstract 3d space. However, the class can be used for any dataframe that consists of time series data.
+
+**Parameters:** **df** *(str)* - input the relevant time series data, timestamps as column needed
+
+The incoming dataframe is split into a dataframe of values and a series for the time stamps inside the instanciated class object.
+
+>>>
+**NOTE** the orignial ddata under consideration, i.e. the stock data for the DAX index, contained a couple of stocks which were not accesible for the whol eperiod. Thus, they resulted in correlations with NA values for certain periods, making an initial straightforward implementation of gradient descent impossible. This means that the number of points in the embedded 3d space will be conserved, i.e. fixed over time. Future updates might include the possibility of varying points, allowing the visualization of stocks that can enter and exit the DAX index at any given time.
+>>>
+
 
 #### cartesianMDS()
 
