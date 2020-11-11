@@ -210,6 +210,10 @@ As we can see, the configuration seems to lie approximately on an ellipsoidal su
 - [compile_dax](#compile_dax)
 - [visualize_data](#visualize_datadatadax_joined_closescsv)
 
+- [cartesianMDS](#cartesianMDS)
+- [MDS_trajectory](#MDS_trajectorysize_windows6,-seed42,-metriclinear,-Nmax=2500,-lam=001)
+- [mean_distance](#mean_distance)
+- [plot_3d_state](#plot_3d_state)
 
 This section will give an overview of the two scripts `stock_data_collection_tools.py` and `corrMDS.py`, their functions, classes and methods.
 
@@ -249,8 +253,16 @@ Visualization of cross correlation matrix for the adjusted closing prices of the
 
 **Parameters:** **data** *(str,optional)* - the joined closing prices
 
-### corrMDS.py
+### class corrMDS(df)
 
-The class corrMDS contains the necessary methods to visualize the propagation of pairwise correlations between stock prices in an abstract 3d space. However, the class can be used for any dataframe that consists of time series data.
+**Parameters:** **df** *(str)* - input the relevant time series data, timestamps as column needed 
 
-#### class
+The class corrMDS in `corrMDS.py` contains the necessary methods to visualize the propagation of pairwise correlations between stock prices in an abstract 3d space. However, the class can be used for any dataframe that consists of time series data.
+
+#### cartesianMDS()
+
+#### MDS_trajectory(size_windows=6, seed=42, metric='linear', Nmax=2500, lam=0.01)
+
+#### mean_distance()
+
+#### plot_3d_state()
