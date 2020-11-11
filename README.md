@@ -205,14 +205,15 @@ As we can see, the configuration seems to lie approximately on an ellipsoidal su
 
 ## API Reference
 
+`stock_data_collection_tools.py`
 - [save_dax_tickers](#save_dax_tickers)
 - [get_dax_from_yahoo](#get_dax_from_yahoo)
 - [compile_dax](#compile_dax)
 - [visualize_data](#visualize_datadatadax_joined_closescsv)
 
-
+`corrMDS.py`
 - [cartesianMDS](#cartesianMDS)
-- [MDS_trajectory](#MDS_trajectorysize_windows6,-seed42,-metriclinear,-Nmax2500,-lam001)
+- [MDS_trajectory](#MDS_trajectorysize_windows6-seed42-metriclinear-Nmax2500-lam001)
 - [mean_distance](#mean_distance)
 - [plot_3d_state](#plot_3d_state)
 
