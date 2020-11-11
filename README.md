@@ -205,8 +205,8 @@ As we can see, the configuration seems to lie approximately on an ellipsoidal su
 
 ## API Reference
 
-- [save_dax_tickers](#save-dax-tickers())
-- [get_dax_from_yahoo](#get-dax-from-yahoo())
+- [save_dax_tickers](#save_dax_tickers)
+- [get_dax_from_yahoo](#get-dax-from-yahoo)
 
 
 This section will give an overview of the two scripts `stock_data_collection_tools.py` and `corrMDS.py`, their functions, classes and methods.
