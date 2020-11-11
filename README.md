@@ -264,7 +264,7 @@ The class corrMDS in `corrMDS.py` contains the necessary methods to visualize th
 The incoming dataframe is split into a dataframe of values and a series for the time stamps inside the instanciated class object.
 
 >>>
-**NOTE** the orignial ddata under consideration, i.e. the stock data for the DAX index, contained a couple of stocks which were not accesible for the whol eperiod. Thus, they resulted in correlations with NA values for certain periods, making an initial straightforward implementation of gradient descent impossible. This means that the number of points in the embedded 3d space will be conserved, i.e. fixed over time. Future updates might include the possibility of varying points, allowing the visualization of stocks that can enter and exit the DAX index at any given time.
+**NOTE** the orignial data under consideration, i.e. the stock data for the DAX index, contained a couple of stocks which were not accesible for the whole period. Thus, they resulted in correlations with NA values for certain periods, making an initial straightforward implementation of gradient descent impossible. This means that the number of points in the embedded 3d space will be conserved, i.e. fixed over time. Future updates might include the possibility of varying points, allowing the visualization of stocks that can enter and exit the DAX index at any given time.
 >>>
 
 
@@ -278,7 +278,7 @@ The core method, applying the gradient descent algorithm for one time step. The 
 The arrays of mean values and standard deviations are used later on in the 3d visualization to display additional information. 
 
 >>>
-**NOTE** Currently, the gradient descent implemented in this method does not have a stopping criterion and runs for a specified number of epochs, passed on from the wrapper. Initially, the long run behavior of the loss function has been of interest. Future versions might drop the array of the loss and contain a suitable stopping criterion.
+**NOTE** Currently, the gradient descent implemented in this method does not have a stopping criterion and runs for a specified number of epochs, passed on from the wrapper. Initially, the long run behavior of the loss function has been of interest. Future versions might drop the array of the loss and include a suitable stopping criterion.
 >>>
 
 #### MDS_trajectory(size_windows=6, seed=42, metric='linear', Nmax=2500, lam=0.01)
