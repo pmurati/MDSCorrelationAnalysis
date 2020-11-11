@@ -205,6 +205,10 @@ As we can see, the configuration seems to lie approximately on an ellipsoidal su
 
 ## API Reference
 
+- [save_dax_tickers](#save_dax_tickers())
+- [get_dax_from_yahoo](#get_dax_from_yahoo())
+
+
 This section will give an overview of the two scripts `stock_data_collection_tools.py` and `corrMDS.py`, their functions, classes and methods.
 
 ### stock_data_collection_tools.py
@@ -246,3 +250,5 @@ Visualization of cross correlation matrix for the adjusted closing prices of the
 ### corrMDS.py
 
 The class corrMDS contains the necessary methods to visualize the propagation of pairwise correlations between stock prices in an abstract 3d space. However, the class can be used for any dataframe that consists of time series data.
+
+#### class
