@@ -272,7 +272,7 @@ The incoming dataframe is split into a dataframe of values and a series for the 
 
 The core method, applying the gradient descent algorithm for one time step. The necessary input parameters are all passed directly to the instance in the wrapper function, see [MDS_trajectory](#mds_trajectorysize_windows6-seed42-metriclinear-nmax2500-lam001). 
 
-**Returns:** arrays for the mean values and standard deviations per time series for given window, the change in loss function and the resulting loss 
+**Returns:** arrays for the mean values and standard deviations per time series for given window, the change in loss function and the resulting loss  
 **Return type:** array, float number
 
 The arrays of mean values and standard deviations are used later on in the 3d visualization to display additional information. 
