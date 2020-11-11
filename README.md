@@ -270,6 +270,17 @@ The incoming dataframe is split into a dataframe of values and a series for the 
 
 #### cartesianMDS()
 
+The core method, applying the gradient descent algorithm for one time step. The necessary input parameters are all passed directly to the instance in the wrapper function, see [MDS_trajectory](#mds_trajectorysize_windows6-seed42-metriclinear-nmax2500-lam001). 
+
+**Returns:** arrays for the mean values and standard deviations per time series for given window, the change in loss function and the resulting loss 
+**Return type:** array, float number
+
+The arrays of mean values and standard deviations are used later on in the 3d visualization to display additional information. 
+
+>>>
+**NOTE** Currently, the gradient descent implemented in this method does not have a stopping criterion and runs for a specified number of epochs, passed on from the wrapper. Initially, the long run behavior of the loss function has been of interest. Future versions might drop the array of the loss and contain a suitable stopping criterion.
+>>>
+
 #### MDS_trajectory(size_windows=6, seed=42, metric='linear', Nmax=2500, lam=0.01)
 
 #### mean_distance()
