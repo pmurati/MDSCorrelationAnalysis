@@ -303,6 +303,9 @@ For each time step, compute the mean distance of cartesian coordinates from thei
 
 The mean distance $`\overline{d}`$ is defined as
 
-$$`\overline{d}` = \frac{1}{n} \sum_{i} \lvert \bold{x}_{i} - \overline\bold{x} \rvert$$
+```math
+\overline{d} = \frac{1}{n} \sum_{i} \lvert \bold{x}_{i} - \overline\bold{x} \rvert
+```
+
 
 #### plot_3d_state()
