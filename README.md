@@ -309,3 +309,11 @@ The mean distance $`\overline{d}`$ of $`n`$ coordinates $`\bold{x}_{i}`$ from th
 
 
 #### plot_3d_state()
+
+The final visualization, containing a mean distance plot and a 3d scatter plot with an interactive slider option for analyszing the trajectory. The scatter plot is colored in relation to the mean value per time series per time step and the sizes of the markers are set proportional to the standard deviation of the time series at each time step.
+
+>>>
+**NOTE**  
+- Currently, the colors of the markers are not updated properly.
+- Future versions might include annotation of individual points when hovering over them, see [this](https://stackoverflow.com/questions/10374930/matplotlib-annotating-a-3d-scatter-plot) post on stackoverflow. However, in the current setting I could not find an efficient way to implement this feature.
+>>>
