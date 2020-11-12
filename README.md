@@ -299,4 +299,10 @@ All parameters are saved directly as variables of the instance to be used in the
 
 #### mean_distance()
 
+For each time step, compute the mean distance of cartesian coordinates from their centroid (i.e. center of mass) as well as the mean standard deviation and save these arrays as instance variables.
+
+The mean distance $`\overline{d}`$ is defined as
+
+$$`\overline{d}` = \frac{1}{n} \sum_{i} \lvert \bold{x}_{i} - \overline\bold{x} \rvert$$
+
 #### plot_3d_state()
