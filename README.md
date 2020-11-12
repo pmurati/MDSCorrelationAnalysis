@@ -283,6 +283,15 @@ The arrays of mean values and standard deviations are used later on in the 3d vi
 
 #### MDS_trajectory(size_windows=6, seed=42, metric='linear', Nmax=2500, lam=0.01)
 
+The wrapper function for [cartesianMDS](#cartesianmds), applying the gradient descent at each time step for a given window size and returning the cartesian coordinates as well as additional statistics such as the mean value and the std per moving window for each time series and the loss per epoch for each moving window.
+
+**Parameters:** **size_windows** *(int,optional)* - set the window size in months,default is set to 6  
+**seed** *(int,optional)* - set the random seed for the initialization of coordinates, default is set to 42  
+**metric** *(str,optional)* - the metric used, use the default option `linear`  
+**Nmax** *(int,optional)* - the maximum number of epochs, default is set to 2500  
+**lam** *(float,optional)* - the learning rate, default is set to 0.01
+
+
 #### mean_distance()
 
 #### plot_3d_state()
