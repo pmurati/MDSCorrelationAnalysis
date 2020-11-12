@@ -291,6 +291,11 @@ $`\qquad`$ $`\qquad`$ **metric** *(str,optional)* - the metric used, use the def
 $`\qquad`$ $`\qquad`$ **Nmax** *(int,optional)* - the maximum number of epochs, default is set to 2500  
 $`\qquad`$ $`\qquad`$ **lam** *(float,optional)* - the learning rate, default is set to 0.01
 
+All parameters are saved directly as variables of the instance to be used in the cartesianMDS method. 
+
+>>>
+**NOTE** The option to set a different metric then `linear` is outdated. The option `spherical` was implemented to compute distances as the arc along a sperical surface. However, this restriction is not fulfilled by the resulting data, since the points are distributed roughly on an ellipsoid instead.
+>>>
 
 #### mean_distance()
 
