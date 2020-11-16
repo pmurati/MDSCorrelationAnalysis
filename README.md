@@ -164,8 +164,10 @@ The data aggregation is finished by creating a joint table of the adjusted closi
 sdct.compile_dax()
 ```
 
->>>**NOTE**
+>>>
+**NOTE**  
 The functions in `stock_data_collection_tools` can be easily adjusted to retrieve other indices. For a more detailed explanation, see Kinsleys's YouTube Playlist on [Python Programming for Finance](https://www.youtube.com/playlist?list=PLQVvvaa0QuDcOdF96TBtRtuQksErCEBYZ).
+>>>
 
 The following function allows for the visualization of the correlation matrix, as showcased in the [introduction](#correlation-matrices). 
 
@@ -222,7 +224,8 @@ This section will give an overview of the two scripts `stock_data_collection_too
 Includes the functions for retrieving and aggregating closing prices for the German DAX index and visualize their cross-correlations based on open source data.
 
 >>>
-**NOTE** The following functions can easily be adjusted to receive an input for any index or list of stocks.
+**NOTE**  
+The following functions can easily be adjusted to receive an input for any index or list of stocks.
 >>>
 
 #### save_dax_tickers():
@@ -260,8 +263,10 @@ The class corrMDS in `corrMDS.py` contains the necessary methods to visualize th
 
 The incoming data frame is split into a data frame of values and a series for the time stamps inside the instantiated class object.
 
->**NOTE** the originial data under consideration, i.e. the stock data for the DAX index, contained a couple of stocks which were not acesible for the whole period. Thus, they resulted in correlations with NA values for certain periods, making an initial straightforward implementation of gradient descent impossible. This means that the number of points in the embedded 3d space will be conserved, i.e. fixed over time. Future updates might include the possibility of varying points, allowing the visualization of stocks that can enter and exit the DAX index at any given time.
-
+>>>
+**NOTE**  
+The originial data under consideration, i.e. the stock data for the DAX index, contained a couple of stocks which were not acesible for the whole period. Thus, they resulted in correlations with NA values for certain periods, making an initial straightforward implementation of gradient descent impossible. This means that the number of points in the embedded 3d space will be conserved, i.e. fixed over time. Future updates might include the possibility of varying points, allowing the visualization of stocks that can enter and exit the DAX index at any given time.
+>>>
 
 #### cartesianMDS()
 
@@ -273,7 +278,8 @@ The core method, applying the gradient descent algorithm for one time step. The 
 The arrays of mean values and standard deviations are used later on in the 3d visualization to display additional information. 
 
 >>>
-**NOTE** Currently, the gradient descent implemented in this method does not have a stopping criterion and runs for a specified number of epochs, passed on from the wrapper. Initially, the long run behavior of the loss function has been of interest. Future versions might drop the array of the loss and include a suitable stopping criterion.
+**NOTE**  
+Currently, the gradient descent implemented in this method does not have a stopping criterion and runs for a specified number of epochs, passed on from the wrapper. Initially, the long run behavior of the loss function has been of interest. Future versions might drop the array of the loss and include a suitable stopping criterion.
 >>>
 
 #### MDS_trajectory(size_windows=6, seed=42, metric='linear', Nmax=2500, lam=0.01)
