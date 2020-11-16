@@ -259,10 +259,8 @@ The core method, applying the gradient descent algorithm for one time step. The 
 
 The arrays of mean values and standard deviations are used later on in the 3d visualization to display additional information. 
 
->>>
-**NOTE**  
-Currently, the gradient descent implemented in this method does not have a stopping criterion and runs for a specified number of epochs, passed on from the wrapper. Initially, the long run behavior of the loss function has been of interest. Future versions might drop the array of the loss and include a suitable stopping criterion.
->>>
+>**NOTE**  
+>Currently, the gradient descent implemented in this method does not have a stopping criterion and runs for a specified number of epochs, passed on from the wrapper. >Initially, the long run behavior of the loss function has been of interest. Future versions might drop the array of the loss and include a suitable stopping >criterion.
 
 #### MDS_trajectory(size_windows=6, seed=42, metric='linear', Nmax=2500, lam=0.01)
 
@@ -277,10 +275,8 @@ The wrapper function for [cartesianMDS](#cartesianmds), applying the gradient de
 
 All parameters are saved directly as variables of the instance to be used in the cartesianMDS method. 
 
->>>
-**NOTE**  
-The option to set a different metric then `linear` is outdated. The option `spherical` was implemented to compute distances as the arc along a spherical surface. However, this restriction is not fulfilled by the resulting data, since the points are distributed roughly on an ellipsoid instead.
->>>
+>**NOTE**  
+>The option to set a different metric then `linear` is outdated. The option `spherical` was implemented to compute distances as the arc along a spherical surface. >However, this restriction is not fulfilled by the resulting data, since the points are distributed roughly on an ellipsoid instead.
 
 #### mean_distance()
 
