@@ -294,7 +294,10 @@ $`\qquad`$ $`\qquad`$ **lam** *(float,optional)* - the learning rate, default is
 
 All parameters are saved directly as variables of the instance to be used in the cartesianMDS method. 
 
->**NOTE** The option to set a different metric then `linear` is outdated. The option `spherical` was implemented to compute distances as the arc along a spherical surface. However, this restriction is not fulfilled by the resulting data, since the points are distributed roughly on an ellipsoid instead.
+>>>
+**NOTE**  
+The option to set a different metric then `linear` is outdated. The option `spherical` was implemented to compute distances as the arc along a spherical surface. However, this restriction is not fulfilled by the resulting data, since the points are distributed roughly on an ellipsoid instead.
+>>>
 
 #### mean_distance()
 
