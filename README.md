@@ -221,8 +221,9 @@ This section will give an overview of the two scripts `stock_data_collection_too
 
 Includes the functions for retrieving and aggregating closing prices for the German DAX index and visualize their cross-correlations based on open source data.
 
->>>**NOTE**
-The following functions can easily be adjusted to receive an input for any index or list of stocks.
+>>>
+**NOTE** The following functions can easily be adjusted to receive an input for any index or list of stocks.
+>>>
 
 #### save_dax_tickers():
 
@@ -259,7 +260,7 @@ The class corrMDS in `corrMDS.py` contains the necessary methods to visualize th
 
 The incoming data frame is split into a data frame of values and a series for the time stamps inside the instantiated class object.
 
->>>**NOTE** the originial data under consideration, i.e. the stock data for the DAX index, contained a couple of stocks which were not acesible for the whole period. Thus, they resulted in correlations with NA values for certain periods, making an initial straightforward implementation of gradient descent impossible. This means that the number of points in the embedded 3d space will be conserved, i.e. fixed over time. Future updates might include the possibility of varying points, allowing the visualization of stocks that can enter and exit the DAX index at any given time.
+>**NOTE** the originial data under consideration, i.e. the stock data for the DAX index, contained a couple of stocks which were not acesible for the whole period. Thus, they resulted in correlations with NA values for certain periods, making an initial straightforward implementation of gradient descent impossible. This means that the number of points in the embedded 3d space will be conserved, i.e. fixed over time. Future updates might include the possibility of varying points, allowing the visualization of stocks that can enter and exit the DAX index at any given time.
 
 
 #### cartesianMDS()
