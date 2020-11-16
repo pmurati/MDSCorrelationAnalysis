@@ -40,79 +40,63 @@ The above choice, although sensible will not guarantee a perfect mapping onto a 
 
 ### Gradient descent
 
-In the following, we will define the loss function $`J`$ which is going to be minimized, given:
-- an initial correlation matrix $`d_{\rho}(i,j)`$ of $`n`$ time series
-- a random configurations of cartesian coordinates $`\bold{x}_{1},\dots,\bold{x}_{n}\in\R`$, arranged in the matrix
-```math
-\bold{X} = [\bold{x}_{1},\dots,\bold{x}_{n}]^{T}
-```
-- a number of epochs $`k\in1,\dots,K`$
+In the following, we will define the loss function <a href="https://www.codecogs.com/eqnedit.php?latex=J" target="_blank"><img src="https://latex.codecogs.com/svg.latex?J" title="J" /></a> which is going to be minimized, given:
+- an initial correlation matrix <a href="https://www.codecogs.com/eqnedit.php?latex=d_{\rho}(i,j)" target="_blank"><img src="https://latex.codecogs.com/svg.latex?d_{\rho}(i,j)" title="d_{\rho}(i,j)" /></a> of <a href="https://www.codecogs.com/eqnedit.php?latex=n" target="_blank"><img src="https://latex.codecogs.com/svg.latex?n" title="n" /></a> time series
+- a random configurations of cartesian coordinates <a href="https://www.codecogs.com/eqnedit.php?latex=\bold{x}_{1},\cdots,\bold{x}_{n}\in\mathbb{R}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{x}_{1},\cdots,\bold{x}_{n}\in\mathbb{R}" title="\bold{x}_{1},\cdots,\bold{x}_{n}\in\mathbb{R}" /></a>, arranged in the matrix
 
-- the learning rate $`\lambda`$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\bold{X}&space;=&space;[\bold{x}_{1},\dots,\bold{x}_{n}]^{T}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{X}&space;=&space;[\bold{x}_{1},\dots,\bold{x}_{n}]^{T}" title="\bold{X} = [\bold{x}_{1},\dots,\bold{x}_{n}]^{T}" /></a>
 
-Let the Euclidean distance between two vectors $`\bold{x}_{i}`$ and $`\bold{x}_{j}`$ be given by
+- a number of epochs <a href="https://www.codecogs.com/eqnedit.php?latex=k\in1,\dots,K" target="_blank"><img src="https://latex.codecogs.com/svg.latex?k\in1,\dots,K" title="k\in1,\dots,K" /></a>
 
-```math
-d_{\bold{x}}(i,j) = \sqrt{(x_{i}-x_{j})^2 + (y_{i}-y_{j})^2 + (z_{i}-z_{j})^2}
-```
+- the learning rate <a href="https://www.codecogs.com/eqnedit.php?latex=\lambda" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\lambda" title="\lambda" /></a>
 
-with $`\bold{x}_{i} = [x_{i},y_{i},z_{i}]^{T}`$ and where the bold index $`\bold{x}`$ distinguishes this distance form the distance metric above. We want to minimize the difference in distance between our derived distance metric and the Euclidean distance of configuration vectors $`\varepsilon_{ij} = d_{\bold{x}}(i,j) -  d_{\rho}(i,j)`$. This allows for the definition of a convex loss function
+Let the Euclidean distance between two vectors <a href="https://www.codecogs.com/eqnedit.php?latex=\bold{x}_{i}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{x}_{i}" title="\bold{x}_{i}" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=\bold{x}_{j}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{x}_{j}" title="\bold{x}_{j}" /></a> be given by
 
-```math
-J = \sum_{i,j} \varepsilon_{ij}^2 = \sum_{i,j} (d_{\bold{x}}(i,j) -  d_{\rho}(i,j))^2
-```
+<a href="https://www.codecogs.com/eqnedit.php?latex=d_{\bold{x}}(i,j)&space;=&space;\sqrt{(x_{i}-x_{j})^2&space;&plus;&space;(y_{i}-y_{j})^2&space;&plus;&space;(z_{i}-z_{j})^2}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?d_{\bold{x}}(i,j)&space;=&space;\sqrt{(x_{i}-x_{j})^2&space;&plus;&space;(y_{i}-y_{j})^2&space;&plus;&space;(z_{i}-z_{j})^2}" title="d_{\bold{x}}(i,j) = \sqrt{(x_{i}-x_{j})^2 + (y_{i}-y_{j})^2 + (z_{i}-z_{j})^2}" /></a>
 
-The gradient of this loss with respect to each vector $`\bold{x}_{i}`$ is given by
+with <a href="https://www.codecogs.com/eqnedit.php?latex=\bold{x}_{i}&space;=&space;[x_{i},y_{i},z_{i}]^{T}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{x}_{i}&space;=&space;[x_{i},y_{i},z_{i}]^{T}" title="\bold{x}_{i} = [x_{i},y_{i},z_{i}]^{T}" /></a> and where the bold index <a href="https://www.codecogs.com/eqnedit.php?latex=\bold{x}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{x}" title="\bold{x}" /></a> distinguishes this distance form the distance metric above. We want to minimize the difference in distance between our derived distance metric and the Euclidean distance of configuration vectors <a href="https://www.codecogs.com/eqnedit.php?latex=\varepsilon_{ij}&space;=&space;d_{\bold{x}}(i,j)&space;-&space;d_{\rho}(i,j)" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\varepsilon_{ij}&space;=&space;d_{\bold{x}}(i,j)&space;-&space;d_{\rho}(i,j)" title="\varepsilon_{ij} = d_{\bold{x}}(i,j) - d_{\rho}(i,j)" /></a>. This allows for the definition of a convex loss function
 
-```math
-\nabla_{i}J = \sum_{i,j} \nabla_{i} (\varepsilon_{ij})^2 
-```
+<a href="https://www.codecogs.com/eqnedit.php?latex=J&space;=&space;\sum_{i,j}&space;\varepsilon_{ij}^2&space;=&space;\sum_{i,j}&space;(d_{\bold{x}}(i,j)&space;-&space;d_{\rho}(i,j))^2" target="_blank"><img src="https://latex.codecogs.com/svg.latex?J&space;=&space;\sum_{i,j}&space;\varepsilon_{ij}^2&space;=&space;\sum_{i,j}&space;(d_{\bold{x}}(i,j)&space;-&space;d_{\rho}(i,j))^2" title="J = \sum_{i,j} \varepsilon_{ij}^2 = \sum_{i,j} (d_{\bold{x}}(i,j) - d_{\rho}(i,j))^2" /></a>
+
+The gradient of this loss with respect to each vector <a href="https://www.codecogs.com/eqnedit.php?latex=\bold{x}_{i}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{x}_{i}" title="\bold{x}_{i}" /></a> is given by
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\nabla_{i}J&space;=&space;\sum_{i,j}&space;\nabla_{i}&space;(\varepsilon_{ij})^2" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\nabla_{i}J&space;=&space;\sum_{i,j}&space;\nabla_{i}&space;(\varepsilon_{ij})^2" title="\nabla_{i}J = \sum_{i,j} \nabla_{i} (\varepsilon_{ij})^2" /></a>
 
 By the chain rule, each term in the sum can be written as
 
-```math
-\nabla_{i} (\varepsilon_{ij})^2 = 2 \varepsilon_{ij}\cdot\nabla_{i}\varepsilon_{ij}
-```
+<a href="https://www.codecogs.com/eqnedit.php?latex=\nabla_{i}&space;(\varepsilon_{ij})^2&space;=&space;2&space;\varepsilon_{ij}\cdot\nabla_{i}\varepsilon_{ij}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\nabla_{i}&space;(\varepsilon_{ij})^2&space;=&space;2&space;\varepsilon_{ij}\cdot\nabla_{i}\varepsilon_{ij}" title="\nabla_{i} (\varepsilon_{ij})^2 = 2 \varepsilon_{ij}\cdot\nabla_{i}\varepsilon_{ij}" /></a>
 
-Expanding $`\varepsilon_{ij}`$ in terms of the distances and noting that $`d_{\rho}(i,j)`$ is fixed, we get
-```math
-\nabla_{i}\varepsilon_{ij} = \nabla_{i} d_{\bold{x}}(i,j) = \frac{\bold{x}_{i}-\bold{x}_{j}}{d_{\bold{x}}(i,j)}
-```
+Expanding <a href="https://www.codecogs.com/eqnedit.php?latex=\varepsilon_{ij}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\varepsilon_{ij}" title="\varepsilon_{ij}" /></a> in terms of the distances and noting that <a href="https://www.codecogs.com/eqnedit.php?latex=d_{\rho}(i,j)" target="_blank"><img src="https://latex.codecogs.com/svg.latex?d_{\rho}(i,j)" title="d_{\rho}(i,j)" /></a> is fixed, we get
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\nabla_{i}\varepsilon_{ij}&space;=&space;\nabla_{i}&space;d_{\bold{x}}(i,j)&space;=&space;\frac{\bold{x}_{i}-\bold{x}_{j}}{d_{\bold{x}}(i,j)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\nabla_{i}\varepsilon_{ij}&space;=&space;\nabla_{i}&space;d_{\bold{x}}(i,j)&space;=&space;\frac{\bold{x}_{i}-\bold{x}_{j}}{d_{\bold{x}}(i,j)}" title="\nabla_{i}\varepsilon_{ij} = \nabla_{i} d_{\bold{x}}(i,j) = \frac{\bold{x}_{i}-\bold{x}_{j}}{d_{\bold{x}}(i,j)}" /></a>
 
 leading to an overall expression for the loss gradient
 
-```math
-\nabla_{i}J = 2\sum_{i,j}\frac{\varepsilon_{ij}}{d_{\bold{x}}(i,j)}\cdot(\bold{x}_{i}-\bold{x}_{j})
-```
+<a href="https://www.codecogs.com/eqnedit.php?latex=\nabla_{i}J&space;=&space;2\sum_{i,j}\frac{\varepsilon_{ij}}{d_{\bold{x}}(i,j)}\cdot(\bold{x}_{i}-\bold{x}_{j})" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\nabla_{i}J&space;=&space;2\sum_{i,j}\frac{\varepsilon_{ij}}{d_{\bold{x}}(i,j)}\cdot(\bold{x}_{i}-\bold{x}_{j})" title="\nabla_{i}J = 2\sum_{i,j}\frac{\varepsilon_{ij}}{d_{\bold{x}}(i,j)}\cdot(\bold{x}_{i}-\bold{x}_{j})" /></a>
 
 For compactness let us define
-```math
- \nabla\bold{J} = \begin{bmatrix}  (\nabla_{1}J)^{T} \\ \vdots \\(\nabla_{n}J)^{T} \end{bmatrix}
-```
-Updating the coordinate matrix $`\bold{X}`$ after one epoch $`k\to k+1`$ of gradient descent is thus given by
-```math
-\bold{X}^{k+1} = \bold{X}^{k} - \lambda\cdot\nabla\bold{J}^{k}
-```
 
-where we added the upper index for the respective epoch. Thus after each step, the coordinates get updated and in return the distances $`d_{\bold{x}}(i,j)`$.  
+<a href="https://www.codecogs.com/eqnedit.php?latex=\nabla\bold{J}&space;=&space;\begin{bmatrix}&space;(\nabla_{1}J)^{T}&space;\\&space;\vdots&space;\\(\nabla_{n}J)^{T}&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\nabla\bold{J}&space;=&space;\begin{bmatrix}&space;(\nabla_{1}J)^{T}&space;\\&space;\vdots&space;\\(\nabla_{n}J)^{T}&space;\end{bmatrix}" title="\nabla\bold{J} = \begin{bmatrix} (\nabla_{1}J)^{T} \\ \vdots \\(\nabla_{n}J)^{T} \end{bmatrix}" /></a>
+
+Updating the coordinate matrix <a href="https://www.codecogs.com/eqnedit.php?latex=\bold{X}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{X}" title="\bold{X}" /></a> after one epoch <a href="https://www.codecogs.com/eqnedit.php?latex=k\to&space;k&plus;1" target="_blank"><img src="https://latex.codecogs.com/svg.latex?k\to&space;k&plus;1" title="k\to k+1" /></a> of gradient descent is thus given by
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\bold{X}^{k&plus;1}&space;=&space;\bold{X}^{k}&space;-&space;\lambda\cdot\nabla\bold{J}^{k}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{X}^{k&plus;1}&space;=&space;\bold{X}^{k}&space;-&space;\lambda\cdot\nabla\bold{J}^{k}" title="\bold{X}^{k+1} = \bold{X}^{k} - \lambda\cdot\nabla\bold{J}^{k}" /></a>
+
+where we added the upper index for the respective epoch. Thus after each step, the coordinates get updated and in return the distances <a href="https://www.codecogs.com/eqnedit.php?latex=d_{\bold{x}}(i,j)" target="_blank"><img src="https://latex.codecogs.com/svg.latex?d_{\bold{x}}(i,j)" title="d_{\bold{x}}(i,j)" /></a>.  
 
 ### Dynamic propagation
 
 We are interested in correlation changes over time. This can be achieved by computing the correlation matrix within a moving window, by setting a certain window and step size. By default we will consider step sizes of one week. The choice of the window size is a delicate one, as it will have a direct impact on how smooth correlation will vary over time. In the current setting, windows of 6 months are considered. 
 
-Let the time dependence be given by the index $`t\in 1,\dots,T`$ which should not be confused with the epoch index $`k\in 1,\dots,K`$. Keep in mind that one whole gradient descent is performed at each time $`t`$. The procedure in the precious section has the downside that the initial configuration of coordinate points is initialized randomly and that the final vectors, given only the distances from the correlation matrix as an input, are unique only up to rotation. To mitigate this problem, lets assume the following procedure.   
+Let the time dependence be given by the index <a href="https://www.codecogs.com/eqnedit.php?latex=t\in&space;1,\dots,T" target="_blank"><img src="https://latex.codecogs.com/svg.latex?t\in&space;1,\dots,T" title="t\in 1,\dots,T" /></a> which should not be confused with the epoch index <a href="https://www.codecogs.com/eqnedit.php?latex=k\in&space;1,\dots,K" target="_blank"><img src="https://latex.codecogs.com/svg.latex?k\in&space;1,\dots,K" title="k\in 1,\dots,K" /></a>. Keep in mind that one whole gradient descent is performed at each time <a href="https://www.codecogs.com/eqnedit.php?latex=t" target="_blank"><img src="https://latex.codecogs.com/svg.latex?t" title="t" /></a>. The procedure in the precious section has the downside that the initial configuration of coordinate points is initialized randomly and that the final vectors, given only the distances from the correlation matrix as an input, are unique only up to rotation. To mitigate this problem, lets assume the following procedure.   
 
-At time $`t`$ given the coordinate matrix $`\bold{X}_{t}^{1}`$ in the first epoch, perform the gradient descent until epoch $`K`$ (or until a reasonable stopping criterion is triggered) 
+At time <a href="https://www.codecogs.com/eqnedit.php?latex=t" target="_blank"><img src="https://latex.codecogs.com/svg.latex?t" title="t" /></a> given the coordinate matrix <a href="https://www.codecogs.com/eqnedit.php?latex=\bold{X}_{t}^{1}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{X}_{t}^{1}" title="\bold{X}_{t}^{1}" /></a> in the first epoch, perform the gradient descent until epoch <a href="https://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="https://latex.codecogs.com/svg.latex?K" title="K" /></a> (or until a reasonable stopping criterion is triggered) 
 
-```math
-\bold{X}_{t}^{1} \xrightarrow[descent]{gradient} \bold{X}_{t}^{K} 
-```
+<a href="https://www.codecogs.com/eqnedit.php?latex=\bold{X}_{t}^{1}&space;\xrightarrow[descent]{gradient}&space;\bold{X}_{t}^{K}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{X}_{t}^{1}&space;\xrightarrow[descent]{gradient}&space;\bold{X}_{t}^{K}" title="\bold{X}_{t}^{1} \xrightarrow[descent]{gradient} \bold{X}_{t}^{K}" /></a>
 
-Then, in going from $`t`$ to $`t+1`$, set 
+Then, in going from <a href="https://www.codecogs.com/eqnedit.php?latex=t" target="_blank"><img src="https://latex.codecogs.com/svg.latex?t" title="t" /></a> to <a href="https://www.codecogs.com/eqnedit.php?latex=t&plus;1" target="_blank"><img src="https://latex.codecogs.com/svg.latex?t&plus;1" title="t+1" /></a>, set 
 
-```math
-\bold{X}_{t+1}^{1} = \bold{X}_{t}^{K} 
-```
+<a href="https://www.codecogs.com/eqnedit.php?latex=\bold{X}_{t&plus;1}^{1}&space;=&space;\bold{X}_{t}^{K}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{X}_{t&plus;1}^{1}&space;=&space;\bold{X}_{t}^{K}" title="\bold{X}_{t+1}^{1} = \bold{X}_{t}^{K}" /></a>
 
 thus allowing the previous coordinates to be the input for the following optimization. Again, the quality of the resulting trajectories will depend on the choice in window size. A wide window will lead to less variability in the change of correlation and smoother trajectories than a short one.   
 
@@ -301,11 +285,9 @@ The option to set a different metric then `linear` is outdated. The option `sphe
 
 For each time step, compute the mean distance of cartesian coordinates from their centroid (i.e. center of mass) as well as the mean standard deviation and save these arrays as instance variables.
 
-The mean distance $`\overline{d}`$ of $`n`$ coordinates $`\bold{x}_{i}`$ from their centroid $`\overline\bold{x} = \frac{1}{n} \sum_{i} \bold{x}_{i}`$ is defined as
+The mean distance <a href="https://www.codecogs.com/eqnedit.php?latex=\overline{d}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\overline{d}" title="\overline{d}" /></a> of <a href="https://www.codecogs.com/eqnedit.php?latex=n" target="_blank"><img src="https://latex.codecogs.com/svg.latex?n" title="n" /></a> coordinates <a href="https://www.codecogs.com/eqnedit.php?latex=\bold{x}_{i}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\bold{x}_{i}" title="\bold{x}_{i}" /></a> from their centroid <a href="https://www.codecogs.com/eqnedit.php?latex=\overline{\bold{x}}&space;=&space;\frac{1}{n}&space;\sum_{i}&space;\bold{x}_{i}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\overline{\bold{x}}&space;=&space;\frac{1}{n}&space;\sum_{i}&space;\bold{x}_{i}" title="\overline{\bold{x}} = \frac{1}{n} \sum_{i} \bold{x}_{i}" /></a> is defined as
 
-```math
-\overline{d} = \frac{1}{n} \sum_{i} \lvert \bold{x}_{i} - \overline\bold{x} \rvert
-```
+<a href="https://www.codecogs.com/eqnedit.php?latex=\overline{d}&space;=&space;\frac{1}{n}&space;\sum_{i}&space;\lvert&space;\bold{x}_{i}&space;-&space;\overline{\bold{x}}&space;\rvert" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\overline{d}&space;=&space;\frac{1}{n}&space;\sum_{i}&space;\lvert&space;\bold{x}_{i}&space;-&space;\overline{\bold{x}}&space;\rvert" title="\overline{d} = \frac{1}{n} \sum_{i} \lvert \bold{x}_{i} - \overline{\bold{x}} \rvert" /></a>
 
 
 #### plot_3d_state()
