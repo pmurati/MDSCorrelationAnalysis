@@ -295,8 +295,8 @@ The mean distance <a href="https://www.codecogs.com/eqnedit.php?latex=\overline{
 
 The final visualization, containing a mean distance plot and a 3d scatter plot with an interactive slider option for analyzing the trajectory. The scatter plot is colored in relation to the mean value per time series per time step and the sizes of the markers are set proportional to the standard deviation of the time series at each time step.
 
->>>
-**NOTE**  
-- Currently, the colors of the markers are not updated properly.
-- Future versions might include annotation of individual points when hovering over them, see [this](https://stackoverflow.com/questions/10374930/matplotlib-annotating-a-3d-scatter-plot) post on Stack Overflow. However, in the current setting I could not find an efficient way to implement this feature.
->>>
+
+>**NOTE**  
+>- Currently, the colors of the markers are not updated properly.
+>- Future versions might include annotation of individual points when hovering over them, see [this](https://stackoverflow.com/questions/10374930/matplotlib-annotating-a-3d-scatter-plot) post on Stack Overflow. However, in the current setting I could not find an efficient way to implement this feature.
+
