@@ -268,7 +268,7 @@ Currently, the gradient descent implemented in this method does not have a stopp
 
 The wrapper function for [cartesianMDS](#cartesianmds), applying the gradient descent at each time step for a given window size and returning the cartesian coordinates as well as additional statistics such as the mean value and the std per moving window for each time series and the loss per epoch for each moving window.
 
-**Parameters:**
+**Parameters:**  
 **size_windows** *(int,optional)* - set the window size in months,default is set to 6  
 **seed** *(int,optional)* - set the random seed for the initialization of coordinates, default is set to 42  
 **metric** *(str,optional)* - the metric used, use the default option `linear`  
